@@ -31,5 +31,11 @@ class LoadStreamlitUI:
             ## use case selection
             self.user_controls["selected_usecase"] = st.selectbox("select usecase", usecase_options)
 
+            if self.user_controls["selected_usecase"] == "Chatbot with web":
+                self.user_controls["TAVILY_API_KEY"] = st.session_state["TAVILY_API_KEY"] = st.text_input("TAVILY API KEY", type="password")
+
+                if not self.user_controls["TAVILY_API_KEY"]:
+                    st.warning("Please enter your TAVILY_API_KEY key to proceedd. Don't have? refer : https://app.tavily.com/keys")
+
         return self.user_controls
             
