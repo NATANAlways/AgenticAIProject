@@ -48,7 +48,7 @@ class GraphBuilder:
         
 
         # add nodes
-        self.graph_builder.add_node("chatbot", "")
+        self.graph_builder.add_node("chatbot", chatbot_node)
         self.graph_builder.add_node("tools", tool_node)
 
         # define conditional and direct edges
