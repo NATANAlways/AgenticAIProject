@@ -6,3 +6,7 @@ from typing import Annotated
 class State(TypedDict):
     """Represents the structure of the state used in graph"""
     messages: Annotated[list, add_messages]
+    frequency: str
+    news_data: list
+    summary: str
+    filename: str
