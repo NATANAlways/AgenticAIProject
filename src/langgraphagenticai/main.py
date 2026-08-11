@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 
 from src.langgraphagenticai.ui.streamlitui.loadui import LoadStreamlitUI
@@ -39,7 +40,10 @@ def load_langgraph_agentic_app():
             if not usecase:
                 st.error("Error: No use case selected.")
                 return
-            
+
+            if usecase == "Chatbot with web":
+                os.environ["TAVILY_API_KEY"] = user_input.get("TAVILY_API_KEY", "")
+
             # Graph Builder
             graph_builder = GraphBuilder(model=model)
             try:
